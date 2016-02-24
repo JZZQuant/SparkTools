@@ -26,7 +26,6 @@ SparkRHelper <- R6Class(
              registerTempTable(df, table)
            },
 
-
     Q = function(query){
              require(SparkR)
              sql(self$sqlContext,query)
