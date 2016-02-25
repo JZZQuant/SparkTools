@@ -49,10 +49,6 @@ Quickframe <- R6Class(
              self$path<-path
            },
 
-    Q = function(query){
-             require(SparkR)
-             sql(Quickframe$sqlContext,query)},
-
     Info=function(numeric=TRUE){
       structure<-coltypes(private$dataobject)
       features<-columns(private$dataobject)
@@ -83,3 +79,6 @@ Quickframe <- R6Class(
 Quickframe$sc<-NULL
 Quickframe$sqlContext<-NULL
 Quickframe$set<-T
+Quickframe$Q <- function(query){
+  require(SparkR)
+  sql(Quickframe$sqlContext,query)}
