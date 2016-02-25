@@ -76,9 +76,11 @@ Quickframe <- R6Class(
   )
 )
 
+#these three still need to be branded as private variables to avoid accedental modification
 Quickframe$sc<-NULL
 Quickframe$sqlContext<-NULL
 Quickframe$set<-T
+
 Quickframe$Q <- function(query){
   require(SparkR)
   sql(Quickframe$sqlContext,query)}
